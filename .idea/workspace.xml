@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5108596d-d018-4ee4-9276-1570e87b46dd" name="Default" comment="" />
+    <list default="true" id="5108596d-d018-4ee4-9276-1570e87b46dd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interface.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/playwechat.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechatPy.py" afterPath="$PROJECT_DIR$/wechatPy.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,33 +18,78 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="wechatPy.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wechatPy.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechatPy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3268">
-              <caret line="1022" column="0" lean-forward="true" selection-start-line="1022" selection-start-column="0" selection-end-line="1022" selection-end-column="0" />
+            <state relative-caret-position="48">
+              <caret line="888" column="0" lean-forward="true" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#344#492#0" expanded="false" />
+                <element signature="e#527#633#0" expanded="false" />
+                <element signature="e#692#1225#0" expanded="false" />
+                <element signature="e#1259#2658#0" expanded="false" />
+                <element signature="e#2709#2985#0" expanded="false" />
+                <element signature="e#3018#3547#0" expanded="false" />
+                <element signature="e#5231#6146#0" expanded="false" />
+                <element signature="e#6197#6877#0" expanded="false" />
+                <element signature="e#6920#7480#0" expanded="false" />
+                <element signature="e#7521#8712#0" expanded="false" />
+                <element signature="e#8769#9731#0" expanded="false" />
+                <element signature="e#9770#10150#0" expanded="false" />
+                <element signature="e#10185#10842#0" expanded="false" />
+                <element signature="e#10877#11625#0" expanded="false" />
+                <element signature="e#11686#12368#0" expanded="false" />
+                <element signature="e#12436#12440#0" expanded="false" />
+                <element signature="e#12494#15375#0" expanded="false" />
+                <element signature="e#15435#16226#0" expanded="false" />
+                <element signature="e#16290#17182#0" expanded="false" />
+                <element signature="e#17254#17624#0" expanded="false" />
+                <element signature="e#17670#17959#0" expanded="false" />
+                <element signature="e#18008#18314#0" expanded="false" />
+                <element signature="e#18723#18727#0" expanded="false" />
+                <element signature="e#19195#19691#0" expanded="false" />
+                <element signature="e#19733#20310#0" expanded="false" />
+                <element signature="e#20363#21666#0" expanded="false" />
+                <element signature="e#21746#21913#0" expanded="false" />
+                <element signature="e#21956#21990#0" expanded="false" />
+                <element signature="e#24506#24749#0" expanded="false" />
+                <element signature="e#24798#25812#0" expanded="false" />
+                <element signature="e#25861#25954#0" expanded="false" />
+                <element signature="e#26023#26249#0" expanded="false" />
+                <element signature="e#26301#26398#0" expanded="false" />
+                <element signature="e#26672#27877#0" expanded="false" />
+                <element signature="e#27936#28650#0" expanded="false" />
+                <element signature="e#28694#29079#0" expanded="false" />
+                <element signature="e#29129#29414#0" expanded="false" />
+                <element signature="e#29468#29735#0" expanded="false" />
+                <element signature="e#29794#32593#0" expanded="false" />
+                <element signature="e#32635#32811#0" expanded="false" />
+                <element signature="e#32854#33066#0" expanded="false" />
+                <element signature="e#33130#33491#0" expanded="false" />
+                <element signature="e#33571#33814#0" expanded="false" />
+                <element signature="e#33883#34287#0" expanded="false" />
+                <element signature="e#34365#34821#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config.py">
+      <file leaf-file-name="playwechat.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/playwechat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-489">
+              <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -53,19 +104,49 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>logging</find>
+      <find>print</find>
+      <find>self._echo</find>
+      <find>cookie</find>
+      <find>webwxsendmsgemotion</find>
+      <find>_saveFile</find>
+      <find>slave</find>
+      <find>_run</find>
+      <find>UnicodeStreamFilter</find>
+      <find>getUserID</find>
+      <find>_searchContent</find>
+      <find>getuserI</find>
+      <find>tuling</find>
+      <find>voice</find>
+      <find>xiaobingautohandle</find>
+      <find># 二维码过期</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>print</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/WechatPy.py" />
         <option value="$PROJECT_DIR$/wechatPy.py" />
+        <option value="$PROJECT_DIR$/interface.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="84" />
+    <option name="x" value="-13" />
     <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="838" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -95,6 +176,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechatPy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechatPy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saved" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -117,7 +212,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.wechatPy">
+    <configuration default="false" name="wechatPy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wechatPy" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wechatPy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -182,6 +295,14 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.wechatPy" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.wechatPy" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -197,25 +318,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="84" y="23" width="1400" height="838" extended-state="0" />
+    <frame x="-13" y="23" width="1400" height="838" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297587" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -223,20 +345,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wechatPy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3268">
-          <caret line="1022" column="0" lean-forward="true" selection-start-line="1022" selection-start-column="0" selection-end-line="1022" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -245,11 +359,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/saved/msgimgs/img_7176603054705369278.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saved/msgimgs/img_9138533203808803612.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="500" column="0" lean-forward="false" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playwechat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-489">
+          <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechatPy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="888" column="0" lean-forward="true" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#344#492#0" expanded="false" />
+            <element signature="e#527#633#0" expanded="false" />
+            <element signature="e#692#1225#0" expanded="false" />
+            <element signature="e#1259#2658#0" expanded="false" />
+            <element signature="e#2709#2985#0" expanded="false" />
+            <element signature="e#3018#3547#0" expanded="false" />
+            <element signature="e#5231#6146#0" expanded="false" />
+            <element signature="e#6197#6877#0" expanded="false" />
+            <element signature="e#6920#7480#0" expanded="false" />
+            <element signature="e#7521#8712#0" expanded="false" />
+            <element signature="e#8769#9731#0" expanded="false" />
+            <element signature="e#9770#10150#0" expanded="false" />
+            <element signature="e#10185#10842#0" expanded="false" />
+            <element signature="e#10877#11625#0" expanded="false" />
+            <element signature="e#11686#12368#0" expanded="false" />
+            <element signature="e#12436#12440#0" expanded="false" />
+            <element signature="e#12494#15375#0" expanded="false" />
+            <element signature="e#15435#16226#0" expanded="false" />
+            <element signature="e#16290#17182#0" expanded="false" />
+            <element signature="e#17254#17624#0" expanded="false" />
+            <element signature="e#17670#17959#0" expanded="false" />
+            <element signature="e#18008#18314#0" expanded="false" />
+            <element signature="e#18723#18727#0" expanded="false" />
+            <element signature="e#19195#19691#0" expanded="false" />
+            <element signature="e#19733#20310#0" expanded="false" />
+            <element signature="e#20363#21666#0" expanded="false" />
+            <element signature="e#21746#21913#0" expanded="false" />
+            <element signature="e#21956#21990#0" expanded="false" />
+            <element signature="e#24506#24749#0" expanded="false" />
+            <element signature="e#24798#25812#0" expanded="false" />
+            <element signature="e#25861#25954#0" expanded="false" />
+            <element signature="e#26023#26249#0" expanded="false" />
+            <element signature="e#26301#26398#0" expanded="false" />
+            <element signature="e#26672#27877#0" expanded="false" />
+            <element signature="e#27936#28650#0" expanded="false" />
+            <element signature="e#28694#29079#0" expanded="false" />
+            <element signature="e#29129#29414#0" expanded="false" />
+            <element signature="e#29468#29735#0" expanded="false" />
+            <element signature="e#29794#32593#0" expanded="false" />
+            <element signature="e#32635#32811#0" expanded="false" />
+            <element signature="e#32854#33066#0" expanded="false" />
+            <element signature="e#33130#33491#0" expanded="false" />
+            <element signature="e#33571#33814#0" expanded="false" />
+            <element signature="e#33883#34287#0" expanded="false" />
+            <element signature="e#34365#34821#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
