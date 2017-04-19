@@ -10,8 +10,6 @@ import multiprocessing
 import platform
 from collections import defaultdict
 import config
-
-# for media upload
 import mimetypes
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
@@ -312,6 +310,7 @@ class WebWeixin(object):
         pm = re.search(r'window.synccheck={retcode:"(\d+)",selector:"(\d+)"}', data)
         retcode = pm.group(1)
         selector = pm.group(2)
+        print('synccheck duration ', response.elapsed)
         return [retcode, selector]
 
     def webwxsync(self):
@@ -326,8 +325,8 @@ class WebWeixin(object):
         dic = json.loads(r.content.decode('utf-8'))
         if dic == '':
             return None
-        if self.DEBUG:
-            print(json.dumps(dic, indent=4))
+        # if self.DEBUG:
+            # print(json.dumps(dic, indent=4))
 
         if dic['BaseResponse']['Ret'] == 0:
             self.SyncKey = dic['SyncKey']
@@ -474,19 +473,6 @@ class WebWeixin(object):
             print(json.dumps(dic, indent=4))
         return dic['BaseResponse']['Ret'] == 0
 
-    # 保存文件
-    def _saveFile(self, filename, data, api=None):
-        fn = filename
-        if self.saveSubFolders[api]:
-            dirName = os.path.join(self.saveFolder, self.saveSubFolders[api])
-            if not os.path.exists(dirName):
-                os.makedirs(dirName)
-            fn = os.path.join(dirName, filename)
-            with open(fn, 'wb') as f:
-                f.write(data)
-                f.close()
-        return fn
-
     def webwxgeticon(self, someid):
         url = self.base_uri + \
               '/webwxgeticon?username=%s&skey=%s' % (id, self.skey)
@@ -517,11 +503,10 @@ class WebWeixin(object):
         fn = 'img_' + msgid + '.jpg'
         return self._saveFile(fn, data, 'webwxgetmsgimg')
 
-    # TODO
+    # FIXME
     def webwxgetvideo(self, msgid):
         pass
 
-    # FIXME
     def webwxgetvoice(self, msgid):
         url = self.base_uri + \
               '/webwxgetvoice?msgid=%s&skey=%s' % (msgid, self.skey)
@@ -626,16 +611,16 @@ class WebWeixin(object):
             # 消息类型
             msgid = msg['MsgId']
 
-            #'''
+            '''
             if self.autoReplyMode:
                 # 小冰
                 self.xiaobingautohandle(content, msgid, msgType, nick_name=name)
                 return
-            #'''
+            '''
             if msgType == 1:
                 raw_msg = {'raw_msg': msg}
                 self._showMsg(raw_msg)
-                '''# 图灵机器人
+                #'''# 图灵机器人
                 if self.autoReplyMode:
                     # 机器人自动回复
                     ans = self.send_to_tuling(content, user_id=msg['FromUserName']) + '\n[来自微信机器人]'
@@ -643,7 +628,7 @@ class WebWeixin(object):
                         print('自动回复: ===========\n' + ans + '\n==================')
                     else:
                         print('自动回复失败')
-                '''
+                #'''
             elif msgType == 3:
                 image = self.webwxgetmsgimg(msgid)
                 raw_msg = {'raw_msg': msg,
@@ -722,7 +707,8 @@ class WebWeixin(object):
             self.lastCheckTs = time.time()
             [retcode, selector] = self.synccheck()
             if self.DEBUG:
-                print('retcode: %s, selector: %s' % (retcode, selector))
+                date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                print('%s retcode: %s, selector: %s' % (date, retcode, selector))
             if retcode == '1100':
                 print('[*] 你在手机上登出了微信')
                 break
@@ -743,7 +729,7 @@ class WebWeixin(object):
                     print('[*] 手机玩微信 %d 次' % playWeChat)
                 elif selector == '0':
                     time.sleep(1)
-            if (time.time() - self.lastCheckTs) <= 20:
+            if (time.time() - self.lastCheckTs) <= 10:
                 time.sleep(time.time() - self.lastCheckTs)
 
     def sendMsg(self, name, word, isfile=False):
@@ -877,6 +863,19 @@ class WebWeixin(object):
             else:
                 os.system('open %s &' % path)
 
+    # 保存文件
+    def _saveFile(self, filename, data, api=None):
+        fn = filename
+        if self.saveSubFolders[api]:
+            dirName = os.path.join(self.saveFolder, self.saveSubFolders[api])
+            if not os.path.exists(dirName):
+                os.makedirs(dirName)
+            fn = os.path.join(dirName, filename)
+            with open(fn, 'wb') as f:
+                f.write(data)
+                f.close()
+        return fn
+
     def transcoding(self, data):
         if not data:
             return data
@@ -900,6 +899,7 @@ class WebWeixin(object):
         dic = r.json()
         return dic.get('text', '…………')
 
+    # 小冰
     def xiaobingautohandle(self, content, msgid, msgtype, nick_name):
         if nick_name == '小冰':
             self.replay_from_xiaobing(content, msgid, msgtype, forwordto=self.last_chat_user)
@@ -931,6 +931,8 @@ class WebWeixin(object):
             self.webwxsendmsgimg(forworduser, media_id=mediaid)
         elif msgtype == 34:
             print('很可惜没有发送语音的功能')
+
+    # TODO cache login info and login automatically during short time
 
 if __name__ == '__main__':
 

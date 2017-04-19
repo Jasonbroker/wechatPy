@@ -61,7 +61,6 @@ finally:
 '''top = Tk()
 image = Image.open(QR_CODE)
 logo = PhotoImage(image)
-print(logo)
 label = Label(top, image=logo)
 label.pack()
 top.mainloop()
