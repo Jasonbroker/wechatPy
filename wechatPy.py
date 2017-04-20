@@ -916,8 +916,8 @@ class WebWeixin(object):
             dic = self.webwxuploadmedia(image)
             mediaid = dic['MediaId']
             self.webwxsendmsgimg(xiaobing, media_id=mediaid)
-        elif msgtype == 34:
-            print('很可惜没有发送语音的功能')
+        else:
+            print('很可惜没有的功能')
 
     def replay_from_xiaobing(self, msg, msgid, msgtype, forwordto):
         forworduser = self.get_username_from_readable_name(forwordto)

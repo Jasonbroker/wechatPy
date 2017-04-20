@@ -1,19 +1,7 @@
-import requests
-
-session = requests.session()
 
 
-def get_response(response, *args, **kwargs):
-    print(response.elapsed)
-    print(response.json())
 
-r = requests.get('https://api.github.com', hooks=dict(response=get_response))
+print(sum([x for x in range(1, 100, 2)]))
 
-def reverse_str( s ):
-    t = ''
-    for x in range(len(s)-1, -1,-1):
-        t += s[x]
-    return t
 
-print(reverse_str('hahhax'))
-
+print([x for x in range(1, 100, 2)])

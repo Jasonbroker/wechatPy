@@ -6,13 +6,11 @@ import subprocess
 import xml.dom.minidom
 import json
 from tkinter import *
-import messagefetch
 
 # 生成一个会话
 session = requests.Session()
 '''
 url = "https://qq.com"
-r = requests.get(url, verify="/tmp/ssl/52.77.252.184.crt")
 r = requests.get(url, verify=False) 
 '''
 # 1. 登录url
@@ -161,14 +159,11 @@ info = {
     'uin': baseRequest['Uin'],
     'deviceid': baseRequest['DeviceID'],
 }
+
 print('-------------------------------\n' + json.dumps(info))
-message_handler = messagefetch.MessageSyncHandler(info)
-
-message_handler.start_receiving()
-
-'''获取联系人列表'''
 
 
+# 获取联系人列表
 def get_contact_list(send_base_url, base_request=baseRequest):
     contacts_url = '%s/webwxgetcontact?r=%s&seq=%s&skey=%s' % (send_base_url, int(time.time()*1e4), 0, base_request['Skey'])
     send_headers = {'ContentType': 'application/json; charset=UTF-8'}
