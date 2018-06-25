@@ -20,6 +20,7 @@ def catchKeyboardInterrupt(fn):
             return fn(*args)
         except KeyboardInterrupt:
             print('\n[*] 强制退出程序')
+
     return wrapper
 
 
@@ -77,13 +78,15 @@ class WebWeixin(object):
         self.saveSubFolders = {'webwxgeticon': 'icons', 'webwxgetheadimg': 'headimgs', 'webwxgetmsgimg': 'msgimgs',
                                'webwxgetvideo': 'videos', 'webwxgetvoice': 'voices', '_showQRCodeImg': 'qrcodes'}
         self.appid = 'wx782c26e4c19acffb'
-        self.lang = 'zh_CN'     # en_US
+        self.lang = 'zh_CN'  # en_US
         self.lastCheckTs = time.time()
         self.memberCount = 0
-        self.SpecialUsers = ['newsapp','filehelper']
+        self.SpecialUsers = ['newsapp', 'filehelper']
         self.timeout = 20  # 同步最短时间间隔（单位：秒）TODO
         self.media_count = -1
         self.last_chat_user = None
+        self.endTime = time.time()
+        self.first = True
 
     def load_config(self, configration):
         if configration['DEBUG']:
@@ -102,7 +105,7 @@ class WebWeixin(object):
             '_': int(time.time()),
         }
         r = self.session.get(url=url, params=params)
-        regx = r'window.QRLogin.code = (\d+); window.QRLogin.uuid = "(\S+?)";'   # js
+        regx = r'window.QRLogin.code = (\d+); window.QRLogin.uuid = "(\S+?)";'  # js
         data = re.search(regx, r.text)
         uuid = None
         if data and data.group(1) == '200':
@@ -126,6 +129,7 @@ class WebWeixin(object):
             os.startfile(config.qr_code)
 
     '''等待二维码刷新'''
+
     def wait_for_login(self, uuid, tip=1):
         url = 'https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login'
         payload = {
@@ -154,7 +158,7 @@ class WebWeixin(object):
                 time.sleep(1)
                 continue
             elif status_code == '408':
-                raise Exception('QRCode should be renewed')     # 二维码过期
+                raise Exception('QRCode should be renewed')  # 二维码过期
 
         return redirect_uri
 
@@ -315,7 +319,7 @@ class WebWeixin(object):
 
     def webwxsync(self):
         url = self.base_uri + '/webwxsync?sid=%s&skey=%s&pass_ticket=%s' % (
-                  self.sid, self.skey, self.pass_ticket)
+            self.sid, self.skey, self.pass_ticket)
         datas = {
             'BaseRequest': self.BaseRequest,
             'SyncKey': self.SyncKey,
@@ -326,7 +330,7 @@ class WebWeixin(object):
         if dic == '':
             return None
         # if self.DEBUG:
-            # print(json.dumps(dic, indent=4))
+        # print(json.dumps(dic, indent=4))
 
         if dic['BaseResponse']['Ret'] == 0:
             self.SyncKey = dic['SyncKey']
@@ -350,7 +354,7 @@ class WebWeixin(object):
         data = json.dumps(params, ensure_ascii=False).encode('utf8')
         r = requests.post(url, data=data, headers=config.HEADERS)
         dic = r.json()
-        return dic['BaseResponse']['Ret'] == 0 # 发送成功
+        return dic['BaseResponse']['Ret'] == 0  # 发送成功
 
     # TODO
     def webwxrevokemsg(self, user_id, msg_id):
@@ -521,7 +525,7 @@ class WebWeixin(object):
 
     def getNameById(self, id):
         url = self.base_uri + '/webwxbatchgetcontact?type=ex&r=%s&pass_ticket=%s' % (
-                  int(time.time()), self.pass_ticket)
+            int(time.time()), self.pass_ticket)
         params = {
             'BaseRequest': self.BaseRequest,
             "Count": 1,
@@ -598,6 +602,7 @@ class WebWeixin(object):
         pass
 
     def handleMsg(self, msg_list):
+        print("message: ", msg_list)
         for msg in msg_list['AddMsgList']:
             if self.DEBUG:
                 fn = 'msg_' + str(time.time()) + '.json'
@@ -611,24 +616,25 @@ class WebWeixin(object):
             # 消息类型
             msgid = msg['MsgId']
 
-            '''
-            if self.autoReplyMode:
-                # 小冰
-                self.xiaobingautohandle(content, msgid, msgType, nick_name=name)
-                return
-            '''
+            print("msg type", msgType, "content: ", content, "msgid: ", msgid, "user: ", name)
+
+            # 使用小冰 handle 处理消息
+            self.xiaobingautohandle(content, msgid, msgType, nick_name=name)
+            return
+
             if msgType == 1:
                 raw_msg = {'raw_msg': msg}
                 self._showMsg(raw_msg)
-                #'''# 图灵机器人
+                # '''# 图灵机器人
                 if self.autoReplyMode:
                     # 机器人自动回复
-                    ans = self.send_to_tuling(content, user_id=msg['FromUserName']) + '\n[来自微信机器人]'
+                    # ans = self.send_to_tuling(content, user_id=msg['FromUserName']) + '\n[来自微信机器人]'
+                    ans = self.send_to_tuling(content, user_id=msg['FromUserName'])
                     if self.webwxsendmsg(ans, msg['FromUserName']):
                         print('自动回复: ===========\n' + ans + '\n==================')
                     else:
                         print('自动回复失败')
-                #'''
+                # '''
             elif msgType == 3:
                 image = self.webwxgetmsgimg(msgid)
                 raw_msg = {'raw_msg': msg,
@@ -654,7 +660,7 @@ class WebWeixin(object):
                 print('= 地区: %s %s' % (info['Province'], info['City']))
                 print('= 性别: %s' % ['未知', '男', '女'][info['Sex']])
                 print('=========================')
-            elif msgType == 47:     # 暂不支持内置表情
+            elif msgType == 47:  # 暂不支持内置表情
                 url = self._searchContent('cdnurl', content)
                 raw_msg = {'raw_msg': msg,
                            'message': '%s 发了一个动画表情，点击下面链接查看: %s' % (name, url)}
@@ -805,20 +811,20 @@ class WebWeixin(object):
         self.webwxgetcontact()
         print('[*] 应有 %s 个联系人，读取到联系人 %d 个' % (self.MemberCount, len(self.MemberList)))
         print('[*] 共有 %d 个群 | %d 个直接联系人 | %d 个特殊账号 ｜ %d 公众号或服务号' % (len(self.GroupList),
-                                                                         len(self.ContactList),
-                                                                         len(self.SpecialUsersList),
-                                                                         len(self.PublicUsersList)))
+                                                                    len(self.ContactList),
+                                                                    len(self.SpecialUsersList),
+                                                                    len(self.PublicUsersList)))
         print('[*] 批量获取contacts ... ')
         self.webwxbatchgetcontact()
         print('[*] 微信 ... 启动完成\n')
         print(self)
 
-        if not self.autoReplyMode:
-            if self.interactive and input('[*] 是否开启自动回复模式(y/n): ') == 'y':
-                self.autoReplyMode = True
-                print('[*] 自动回复模式 ... 开启')
-            else:
-                print('[*] 自动回复模式 ... 关闭')
+        # if not self.autoReplyMode:
+        #     if self.interactive and input('[*] 是否开启自动回复模式(y/n): ') == 'y':
+        #         self.autoReplyMode = True
+        #         print('[*] 自动回复模式 ... 开启')
+        #     else:
+        #         print('[*] 自动回复模式 ... 关闭')
 
         # if sys.platform.startswith('win'):
         #     import _thread
@@ -841,7 +847,7 @@ class WebWeixin(object):
                 if name == 'all':
                     self.sendMsgToAll(word)  # '->all:你好'
                 else:
-                    self.sendMsg(name, word)    # '->若鱼:你好'
+                    self.sendMsg(name, word)  # '->若鱼:你好'
             elif text[:3] == 'f->':
                 print('发送文件')
                 [name, file] = text[3:].split(':')
@@ -894,14 +900,35 @@ class WebWeixin(object):
             'key': api_key,
             'user_id': str(user_id),
             'info': msg
-            }
+        }
         r = self.session.post(url, data=payloads)
         dic = r.json()
         return dic.get('text', '…………')
 
     # 小冰
     def xiaobingautohandle(self, content, msgid, msgtype, nick_name):
+        if self.first:
+            self.endTime = time.time()
+
+        if content.find("@若甲鱼") != -1:
+            self.autoReplyMode = True
+            self.endTime = time.time()
+        else:
+            current_time = time.time()
+            # 如果超时了，关闭自动回复。
+            if current_time - self.endTime > 300:
+                if self.first:
+                    self.endTime = current_time
+                    self.first = False
+                else:
+                    print("time out! quit……")
+                    self.autoReplyMode = False
+                    return
+            else:
+                self.endTime = current_time
+
         if nick_name == '小冰':
+            print("reply from 小冰: ", content, nick_name)
             self.replay_from_xiaobing(content, msgid, msgtype, forwordto=self.last_chat_user)
         else:
             self.last_chat_user = nick_name
@@ -921,8 +948,9 @@ class WebWeixin(object):
 
     def replay_from_xiaobing(self, msg, msgid, msgtype, forwordto):
         forworduser = self.get_username_from_readable_name(forwordto)
+        print("forword nick name: ", forwordto, " user", forworduser, "  msg", msg)
         if msgtype == 1:
-            word = msg + '\n[由小冰回复]'
+            word = msg
             self.webwxsendmsg(word, forworduser)
         elif msgtype == 3:
             image = self.webwxgetmsgimg(msgid)
@@ -934,9 +962,9 @@ class WebWeixin(object):
 
     # TODO cache login info and login automatically during short time
 
-if __name__ == '__main__':
 
-        webwx = WebWeixin()
-        webwx.load_config({'interactive': True, 'DEBUG': True, 'autoReplyMode': True})
-        webwx.autoOpen = True   # 自动打开图片
-        webwx.start()
+if __name__ == '__main__':
+    webwx = WebWeixin()
+    webwx.load_config({'interactive': True, 'DEBUG': True, 'autoReplyMode': False})
+    webwx.autoOpen = True  # 自动打开图片
+    webwx.start()
